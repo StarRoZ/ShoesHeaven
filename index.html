@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoesHaven - Toko Sepatu Modern</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7952b3;
+            --secondary: #61428f;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+        }
+        
+        .navbar {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary) !important;
+        }
+
+        .hero {
+            display: flex;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            padding: 150px 0;
+            color: white;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        
+        .product-card {
+            transition: all 0.3s;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card img {
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .blog-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .packaging-box {
+            border-radius: 10px;
+            background-color: var(--light);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .packaging-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#beranda">ShoesHaven</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#beranda">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#profil">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produk">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pengemasan">Pengemasan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Beranda -->
+    <section id="beranda" class="hero">
+        <div id="home" class="container text-center">
+            <h1 class="display-4 fw-bold mb-4">Temukan Sepatu Impian Anda</h1>
+            <p class="lead mb-5">Koleksi sepatu terbaru dengan kualitas premium dan gaya yang trendy</p>
+            <a href="#produk" class="btn btn-primary btn-lg px-4 py-2">Lihat Koleksi</a>
+        </div>
+    </section>
+
+    <!-- Produk Unggulan -->
+    <section id="produk" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Produk Unggulan</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="image/running-shoes.jpg" class="card-img-top" alt="Running Shoes">
+                        <div class="card-body">
+                            <class="card-title">SH-001 Running Shoes</h5>
+                            <p class="card-text">Sepatu lari dengan desain ergonomis, bahan breathable, dan sol yang empuk untuk kenyamanan maksimal.</p>
+                            <p class="fw-bold text-primary mb-2">Rp 850.000</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Beli</button>
+                                </div>
+                                <small class="text-muted">Stock: 25</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="image/casual-shoes.jpg" class="card-img-top" alt="Casual Shoes">
+                        <div class="card-body">
+                            <h5 class="card-title">SH-002 Casual Sneakers</h5>
+                            <p class="card-text">Sepatu sneakers casual dengan desain minimalis, cocok untuk kegiatan sehari-hari dan tampilan santai yang stylish.</p>
+                            <p class="fw-bold text-primary mb-2">Rp 750.000</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Beli</button>
+                                </div>
+                                <small class="text-muted">Stock: 15</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="image/formal-shoes.jpg" class="card-img-top" alt="Formal Shoes">
+                        <div class="card-body">
+                            <h5 class="card-title">SH-003 Formal Oxford</h5>
+                            <p class="card-text">Sepatu formal dari kulit asli dengan finishing premium, ideal untuk acara formal dan penggunaan di kantor.</p>
+                            <p class="fw-bold text-primary mb-2">Rp 1.250.000</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Beli</button>
+                                </div>
+                                <small class="text-muted">Stock: 10</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="image/basketball-shoes.jpg" class="card-img-top" alt="Basketball Shoes">
+                        <div class="card-body">
+                            <h5 class="card-title">SH-004 Basketball Pro</h5>
+                            <p class="card-text">Sepatu basket dengan teknologi anti-slip dan bantalan udara untuk performa maksimal di lapangan.</p>
+                            <p class="fw-bold text-primary mb-2">Rp 1.100.000</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Beli</button>
+                                </div>
+                                <small class="text-muted">Stock: 8</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="image/hiking-shoes.jpg" class="card-img-top" alt="Hiking Boots">
+                        <div class="card-body">
+                            <h5 class="card-title">SH-005 Hiking Expedition</h5>
+                            <p class="card-text">Sepatu hiking tahan air dengan grip kuat dan dukungan pergelangan kaki untuk petualangan outdoor.</p>
+                            <p class="fw-bold text-primary mb-2">Rp 1.450.000</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Beli</button>
+                                </div>
+                                <small class="text-muted">Stock: 12</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="image/slip-on-shoes.jpg" class="card-img-top" alt="Slip-on Shoes">
+                        <div class="card-body">
+                            <h5 class="card-title">SH-006 Slip-on Classic</h5>
+                            <p class="card-text">Sepatu slip-on yang praktis dan nyaman dengan desain timeless, cocok untuk gaya casual sehari-hari.</p>
+                            <p class="fw-bold text-primary mb-2">Rp 650.000</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Beli</button>
+                                </div>
+                                <small class="text-muted">Stock: 20</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produk Lainnya -->
+    <section id="produk" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Produk Lainnya</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="image/produk-lainnya/converse-shoes.jpg" class="card-img-top" alt="Running Shoes">
+                        <div class="card-body">
+                            <class="card-title">
+                                <h5>Converse</h5>
+                            <p class="card-text">Sepatu lari dengan desain ergonomis, bahan breathable, dan sol yang empuk untuk kenyamanan maksimal.</p>
+                            <p class="fw-bold text-primary mb-2">Rp 850.000</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Beli</button>
+                                </div>
+                                <small class="text-muted">Stock: 25</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="image/produk-lainnya/nike-shoes.jpg" class="card-img-top" alt="Formal Shoes">
+                        <div class="card-body">
+                            <h5 class="card-title">Nike</h5>
+                            <p class="card-text">Sepatu formal dari kulit asli dengan finishing premium, ideal untuk acara formal dan penggunaan di kantor.</p>
+                            <p class="fw-bold text-primary mb-2">Rp 1.250.000</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Beli</button>
+                                </div>
+                                <small class="text-muted">Stock: 10</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="image/produk-lainnya/puma-shoes.jpg" class="card-img-top" alt="Formal Shoes">
+                        <div class="card-body">
+                            <h5 class="card-title">Puma</h5>
+                            <p class="card-text">Sepatu formal dari kulit asli dengan finishing premium, ideal untuk acara formal dan penggunaan di kantor.</p>
+                            <p class="fw-bold text-primary mb-2">Rp 1.250.000</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Beli</button>
+                                </div>
+                                <small class="text-muted">Stock: 10</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="image/produk-lainnya/vans-shoes.jpg" class="card-img-top" alt="Slip-on Shoes">
+                        <div class="card-body">
+                            <h5 class="card-title">Vans</h5>
+                            <p class="card-text">Sepatu slip-on yang praktis dan nyaman dengan desain timeless, cocok untuk gaya casual sehari-hari.</p>
+                            <p class="fw-bold text-primary mb-2">Rp 650.000</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Beli</button>
+                                </div>
+                                <small class="text-muted">Stock: 20</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+        </div>
+    </section>
+            
+
+    <!-- Blog -->
+    <section id="blog" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Blog & Artikel</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="blog-card card h-100">
+                        <img src="/api/placeholder/400/250" class="card-img-top" alt="Blog Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Cara Merawat Sepatu Agar Awet</h5>
+                            <p class="card-text">Panduan lengkap untuk merawat berbagai jenis sepatu agar tetap awet dan tidak cepat rusak.</p>
+                            <p class="text-muted"><small>24 April 2025 | Tips & Tricks</small></p>
+                            <a href="#" class="btn btn-sm btn-primary">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card card h-100">
+                        <img src="/api/placeholder/400/250" class="card-img-top" alt="Blog Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Tren Sepatu 2025 yang Wajib Diketahui</h5>
+                            <p class="card-text">Simak tren sepatu terbaru tahun 2025 yang sedang populer di kalangan fashionista dunia.</p>
+                            <p class="text-muted"><small>20 April 2025 | Fashion</small></p>
+                            <a href="#" class="btn btn-sm btn-primary">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card card h-100">
+                        <img src="/api/placeholder/400/250" class="card-img-top" alt="Blog Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Sepatu Lokal vs Impor: Mana yang Lebih Baik?</h5>
+                            <p class="card-text">Perbandingan kualitas, harga, dan durabilitas antara sepatu produksi lokal dan impor.</p>
+                            <p class="text-muted"><small>15 April 2025 | Review</small></p>
+                            <a href="#" class="btn btn-sm btn-primary">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengemasan -->
+    <section id="pengemasan" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Informasi Pemesanan & Pengemasan</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="packaging-box">
+                        <h4><i class="fas fa-box me-2"></i> Pengemasan Premium</h4>
+                        <p>Setiap sepatu dikemas dalam box khusus dengan protective foam untuk menjaga bentuk dan kualitas sepatu selama pengiriman.</p>
+                    </div>
+                    <div class="packaging-box">
+                        <h4><i class="fas fa-truck me-2"></i> Pengiriman</h4>
+                        <p>Kami bekerja sama dengan berbagai jasa pengiriman terpercaya seperti JNE, J&T, SiCepat, dan GoSend untuk memastikan sepatu Anda sampai dengan aman dan tepat waktu.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="packaging-box">
+                        <h4><i class="fas fa-credit-card me-2"></i> Metode Pembayaran</h4>
+                        <p>Kami menerima pembayaran melalui transfer bank, kartu kredit/debit, e-wallet (OVO, GoPay, DANA, LinkAja), dan pembayaran di tempat (COD).</p>
+                    </div>
+                    <div class="packaging-box">
+                        <h4><i class="fas fa-exchange-alt me-2"></i> Kebijakan Pengembalian</h4>
+                        <p>Jika ada masalah dengan pesanan Anda, kami menerima pengembalian dalam waktu 7 hari setelah barang diterima dengan kondisi yang sama seperti saat dikirim.</p>
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <div class="packaging-box">
+                        <h4><i class="fas fa-info-circle me-2"></i> Cara Pemesanan</h4>
+                        <ol>
+                            <li>Pilih produk yang Anda inginkan</li>
+                            <li>Klik tombol "Beli" pada produk yang dipilih</li>
+                            <li>Isi formulir pemesanan dengan informasi yang benar</li>
+                            <li>Pilih metode pembayaran dan lakukan pembayaran</li>
+                            <li>Tunggu konfirmasi dari tim kami</li>
+                            <li>Pesanan Anda akan segera diproses dan dikirim</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil -->
+    <section id="profil" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Profil Developer</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="profile-card text-center">
+                        <img src="/api/placeholder/400/400" class="img-fluid" alt="Foto Profil">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card profile-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Arrasyid Khairudin Ahmed</h3>
+                            <p class="card-text"><strong>Jurusan:</strong> Rekayasa Perangkat Lunak</p>
+                            <p class="card-text"><strong>Kelas:</strong> XII RPL</p>
+                            <p class="card-text"><strong>Sekolah:</strong> SMK Muhammadiyah 1 Yogyakarta</p>
+                            <p class="card-text"><strong>Tentang Saya:</strong></p>
+                            <p>Saya adalah seorang siswa jurusan Rekayasa Perangkat Lunak yang memiliki minat dalam pengembangan web dan aplikasi mobile. Dengan pengetahuan dalam HTML, CSS, JavaScript, dan PHP, saya berkomitmen untuk terus belajar dan mengembangkan keterampilan dalam bidang teknologi informasi.</p>
+                            <p>Proyek ini dibuat sebagai bagian dari tugas Pemrograman Web di SMK Muhammadiyah 1 Yogyakarta. Tujuan dari proyek ini adalah untuk mengimplementasikan pengetahuan yang telah dipelajari dalam membuat website yang responsif dan interaktif.</p>
+                            <div class="mt-4">
+                                <h5>Keahlian:</h5>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">HTML & CSS (90%)</div>
+                                </div>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">JavaScript (75%)</div>
+                                </div>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Bootstrap (80%)</div>
+                                </div>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">PHP (65%)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>ShoesHaven</h5>
+                    <p>Toko sepatu modern dengan koleksi terlengkap dan berkualitas.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Navigasi</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#beranda" class="text-light">Beranda</a></li>
+                        <li><a href="#profil" class="text-light">Profil</a></li>
+                        <li><a href="#produk" class="text-light">Produk</a></li>
+                        <li><a href="#blog" class="text-light">Blog</a></li>
+                        <li><a href="#pengemasan" class="text-light">Pengemasan</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Kontak</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Desa Pringgokusuman, Kecamatan Gedong Tengen, Kota Yogyakarta.</li>
+                        <li><i class="fas fa-phone me-2"></i> +62 822 1030 4658</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@shoeshaven.com</li>
+                    </ul>
+                    <div class="mt-3">
+                        <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">Arrasyid Khairudin Ahmed XII RPL © 2025 | Rekayasa Perangkat Lunak <a href="https://smkmuhiyo.sch.id" class="text-light">SMK Muhiyo</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Active nav item on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
